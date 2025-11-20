@@ -124,10 +124,10 @@ const HeaderSection = ({
       <div className="lg:col-span-3 space-y-6 sm:space-y-8">
         <div className="space-y-3 sm:space-y-2">
           <div className="text-sm text-muted-foreground font-mono tracking-wider">
-            CURSOS / 2025
+            CONSULTORÍA TECNOLÓGICA / 2025
           </div>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
-            Academia
+            Espacio
             <br />
             <span className="text-muted-foreground">Digital</span>
           </h1>
@@ -135,19 +135,19 @@ const HeaderSection = ({
 
         <div className="space-y-6 max-w-md">
           <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-            Cursos especializados en
-            <span className="text-foreground"> desarrollo web</span>,
-            <span className="text-foreground"> programación</span> y
-            <span className="text-foreground"> tecnología</span>. Aprende con
-            proyectos reales y metodologías modernas.
+            Aprendemos haciendo: todos podemos aprender a crear
+            <span className="text-foreground"> productos digitales</span>,
+            <span className="text-foreground"> experiencias web</span> y Cursos
+            prácticos y proyectos reales para aplicar lo aprendido y obtener
+            resultados tangibles.
           </p>
 
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              Inscripciones abiertas
+              Disponible para proyectos
             </div>
-            <div>Modalidad online</div>
+            <div>Consultoría remota</div>
           </div>
         </div>
       </div>
@@ -155,20 +155,33 @@ const HeaderSection = ({
       <div className="lg:col-span-2 flex flex-col justify-end space-y-6 sm:space-y-8 mt-8 lg:mt-0">
         <div className="space-y-4">
           <div className="text-sm text-muted-foreground font-mono">
-            PRÓXIMOS CURSOS
+            SERVICIOS PRINCIPALES
           </div>
-          <div className="space-y-2">
-            <div className="text-foreground">React Avanzado</div>
-            <div className="text-muted-foreground">Inicio: Enero 2025</div>
-            <div className="text-xs text-muted-foreground">
-              8 semanas • Nivel Intermedio
+          <div className="space-y-3">
+            <div className="space-y-1">
+              <div className="text-foreground">Desarrollo Web</div>
+              <div className="text-xs text-muted-foreground">
+                Aplicaciones modernas y escalables
+              </div>
+            </div>
+            <div className="space-y-1">
+              <div className="text-foreground">Consultoría Técnica</div>
+              <div className="text-xs text-muted-foreground">
+                Arquitectura y mejores prácticas
+              </div>
+            </div>
+            <div className="space-y-1">
+              <div className="text-foreground">Mentoría</div>
+              <div className="text-xs text-muted-foreground">
+                Formación de equipos y desarrolladores
+              </div>
             </div>
           </div>
         </div>
 
         <div className="space-y-4">
           <div className="text-sm text-muted-foreground font-mono">
-            ESPECIALIZACIONES
+            TECNOLOGÍAS PRINCIPALES
           </div>
           <div className="flex flex-wrap gap-2">
             {[
@@ -176,13 +189,14 @@ const HeaderSection = ({
               "TypeScript",
               "Next.js",
               "Node.js",
-              "Bases de Datos",
-            ].map((skill) => (
+              "AWS",
+              "PostgreSQL",
+            ].map((tech) => (
               <span
-                key={skill}
+                key={tech}
                 className="px-3 py-1 text-xs border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300"
               >
-                {skill}
+                {tech}
               </span>
             ))}
           </div>
@@ -282,22 +296,20 @@ const ContactSection = ({
   <section id="contact" ref={refCallback} className="py-20 sm:py-32 opacity-0">
     <div className="grid lg:grid-cols-2 gap-12 sm:gap-16">
       <div className="space-y-6 sm:space-y-8">
-        <h2 className="text-3xl sm:text-4xl font-light">Inscríbete</h2>
+        <h2 className="text-3xl sm:text-4xl font-light">Conectemos</h2>
 
         <div className="space-y-6">
           <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-            ¿Listo para llevar tus habilidades al siguiente nivel? Contáctanos
-            para más información sobre próximas fechas y programas.
+            ¿Tienes un proyecto en mente o quieres colaborar? Estoy siempre
+            abierto a conversar sobre nuevas oportunidades y ideas innovadoras.
           </p>
 
           <div className="space-y-4">
             <Link
-              href="mailto:cursos@academiadigital.com"
+              href="mailto:daylersan@gmail.com"
               className="group flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors duration-300"
             >
-              <span className="text-base sm:text-lg">
-                cursos@academiadigital.com
-              </span>
+              <span className="text-base sm:text-lg">daylersan@gmail.com</span>
               <svg
                 className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300"
                 fill="none"
@@ -318,32 +330,70 @@ const ContactSection = ({
 
       <div className="space-y-6 sm:space-y-8">
         <div className="text-sm text-muted-foreground font-mono">
-          INFORMACIÓN
+          ENCUÉNTRAME EN
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[
-            { name: "Modalidad", value: "Online en vivo", icon: "🖥️" },
-            { name: "Duración", value: "6-10 semanas", icon: "⏱️" },
-            { name: "Horarios", value: "Flexibles", icon: "🕒" },
-            { name: "Certificación", value: "Incluida", icon: "📜" },
-          ].map((info) => (
-            <div
-              key={info.name}
+            {
+              name: "GitHub",
+              handle: "@daylerjeff199906",
+              url: "https://github.com/daylerjeff199906",
+              description: "Proyectos y código",
+              svg: (
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.42 2.865 8.166 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53
+                    2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.36.31.678.923.678 1.861 0 1.343-.012 2.426-.012 2.756 0 .268.18.58.688.482A10.02 10.02 0 0022 12.017C22 6.484 17.523 2 12 2z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              ),
+            },
+            {
+              name: "LinkedIn",
+              handle: "José Jefferson Santos Panaifo",
+              url: "https://www.linkedin.com/in/jos%C3%A9-jefferson-santos-panaifo-3668a7246/",
+              description: "Experiencia profesional",
+              svg: (
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 11.268h-3v-5.
+5c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.598h-3v-10h2.881v1.367h.041c.401-.761 1.381-1.562 2.841-1.562 3.039 0 3.6 2.001 3.6 4.601v5.594z"
+                  />
+                </svg>
+              ),
+            },
+          ].map((social) => (
+            <Link
+              key={social.name}
+              href={social.url}
               className="group p-4 border border-border rounded-lg hover:border-muted-foreground/50 transition-all duration-300 hover:shadow-sm"
             >
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <span>{info.icon}</span>
+                  <span className="text-lg">{social.svg}</span>
                   <div className="text-foreground group-hover:text-muted-foreground transition-colors duration-300">
-                    {info.name}
+                    {social.name}
                   </div>
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  {info.value}
+                  {social.handle}
+                </div>
+                <div className="text-xs text-muted-foreground/70">
+                  {social.description}
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

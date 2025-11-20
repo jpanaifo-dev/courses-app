@@ -212,16 +212,10 @@ export default function CourseSessionsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/contact"
-                className="px-8 py-3 border border-foreground text-foreground rounded-lg hover:bg-foreground hover:text-background transition-all duration-300"
-              >
-                Inscribirme ahora
-              </Link>
-              <Link
                 href="/courses"
                 className="px-8 py-3 border border-border text-muted-foreground rounded-lg hover:border-muted-foreground/50 hover:text-foreground transition-all duration-300"
               >
-                Ver más cursos
+                Proximamente
               </Link>
             </div>
           </div>

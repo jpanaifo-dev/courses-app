@@ -274,99 +274,6 @@ const CoursesSection = ({
   );
 };
 
-const MethodologySection = ({
-  refCallback,
-}: {
-  refCallback: (el: HTMLElement | null) => void;
-}) => (
-  <section
-    id="methodology"
-    ref={refCallback}
-    className="min-h-screen py-20 sm:py-32 opacity-0"
-  >
-    <div className="space-y-12 sm:space-y-16">
-      <h2 className="text-3xl sm:text-4xl font-light">
-        Metodología de Enseñanza
-      </h2>
-
-      <div className="grid gap-6 sm:gap-8 lg:grid-cols-2">
-        {[
-          {
-            title: "Aprendizaje Práctico",
-            excerpt:
-              "Proyectos reales desde el día uno. Aprende construyendo aplicaciones del mundo real.",
-            icon: "💻",
-            features: [
-              "Proyectos prácticos",
-              "Code reviews",
-              "Ejercicios semanales",
-            ],
-          },
-          {
-            title: "Seguimiento Personalizado",
-            excerpt:
-              "Mentorías individuales y feedback constante para asegurar tu progreso.",
-            icon: "👨‍🏫",
-            features: [
-              "Mentorías 1:1",
-              "Feedback detallado",
-              "Soporte continuo",
-            ],
-          },
-          {
-            title: "Comunidad Activa",
-            excerpt:
-              "Únete a una comunidad de desarrolladores que comparten conocimientos y experiencias.",
-            icon: "👥",
-            features: ["Slack exclusivo", "Sesiones en vivo", "Networking"],
-          },
-          {
-            title: "Contenido Actualizado",
-            excerpt:
-              "Material siempre actualizado con las últimas tecnologías y mejores prácticas.",
-            icon: "🔄",
-            features: [
-              "Contenido 2025",
-              "Actualizaciones gratis",
-              "Recursos extras",
-            ],
-          },
-        ].map((item, index) => (
-          <article
-            key={index}
-            className="group p-6 sm:p-8 border border-border rounded-lg hover:border-muted-foreground/50 transition-all duration-500 hover:shadow-lg cursor-pointer"
-          >
-            <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <div className="text-2xl">{item.icon}</div>
-                <h3 className="text-lg sm:text-xl font-medium group-hover:text-muted-foreground transition-colors duration-300">
-                  {item.title}
-                </h3>
-              </div>
-
-              <p className="text-muted-foreground leading-relaxed">
-                {item.excerpt}
-              </p>
-
-              <ul className="space-y-2">
-                {item.features.map((feature, idx) => (
-                  <li
-                    key={idx}
-                    className="text-sm text-muted-foreground flex items-center gap-2"
-                  >
-                    <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
 const ContactSection = ({
   refCallback,
 }: {
@@ -490,7 +397,7 @@ export default function CoursesPage() {
   const { isDark, toggleTheme } = useTheme();
   const { activeSection, sectionsRef } = useSectionObserver();
 
-  const sections = ["intro", "courses", "methodology", "contact"];
+  const sections = ["intro", "courses", "contact"];
 
   return (
     <div className="min-h-screen bg-background text-foreground relative">
@@ -499,15 +406,11 @@ export default function CoursesPage() {
       <main className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16">
         <HeaderSection refCallback={(el) => (sectionsRef.current[0] = el)} />
         <CoursesSection refCallback={(el) => (sectionsRef.current[1] = el)} />
-        <MethodologySection
-          refCallback={(el) => (sectionsRef.current[2] = el)}
-        />
-        <ContactSection refCallback={(el) => (sectionsRef.current[3] = el)} />
-
+        <ContactSection refCallback={(el) => (sectionsRef.current[2] = el)} />
         <Footer toggleTheme={toggleTheme} isDark={isDark} />
       </main>
 
-      <div className="fixed bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none"></div>
+      <div className="fixed bottom-0 left-0 right-0 h-24 bg-gradient from-background via-background/80 to-transparent pointer-events-none"></div>
     </div>
   );
 }

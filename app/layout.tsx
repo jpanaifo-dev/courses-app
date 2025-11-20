@@ -1,28 +1,51 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Geist } from "next/font/google"
-import "./globals.css"
+import type React from "react";
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 
-const geist = Geist({
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  display: "swap",
-  variable: "--font-geist",
-})
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-  title: "Felix Macaspac - HubSpot CMS Developer",
-  description: "HubSpot CMS Developer from Philippines with 5 years of experience.",
-  generator: "v0.app",
-}
+  title: "Jose Santos - Web Developer",
+  description:
+    "Portfolio of Jose Santos, a passionate web developer specializing in modern web technologies and creating engaging user experiences.",
+  generator: "Next.js",
+  applicationName: "Jose Santos Portfolio",
+  keywords: [
+    "Jose Santos",
+    "Web Developer",
+    "Portfolio",
+    "JavaScript",
+    "React",
+    "Next.js",
+    "Frontend Developer",
+    "Web Development",
+  ],
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geist.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+    <html lang="en" className="light" style={{ colorScheme: "light" }}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
-  )
+  );
 }

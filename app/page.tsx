@@ -1,5 +1,6 @@
 "use client";
 
+import { courses } from "@/lib/data";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
@@ -211,19 +212,6 @@ const CoursesSection = ({
 }: {
   refCallback: (el: HTMLElement | null) => void;
 }) => {
-  const courses = [
-    {
-      year: "2025",
-      level: "Básico",
-      title: "Desarrollo Web con Python",
-      description:
-        "Domina hooks personalizados, patrones de renderizado y optimización de performance en aplicaciones React de gran escala.",
-      tech: ["TypeScript", "HTML", "CSS", "React", "Python"],
-      duration: "4 semanas",
-      students: "Limitado",
-    },
-  ];
-
   return (
     <section
       id="courses"
@@ -240,9 +228,12 @@ const CoursesSection = ({
 
         <div className="space-y-8 sm:space-y-12">
           {courses.map((course, index) => (
-            <div
+            <Link
+              href={`/courses/${course.title
+                .toLowerCase()
+                .replace(/\s+/g, "-")}`}
               key={index}
-              className="group grid lg:grid-cols-12 gap-4 sm:gap-8 py-6 sm:py-8 border-b border-border/50 hover:border-border transition-colors duration-500"
+              className="group grid lg:grid-cols-12 gap-4 sm:gap-8 py-6 sm:py-8 border-b border-border/50 hover:border-border transition-colors duration-500 px-2 sm:px-4 hover:bg-accent/50 rounded-lg"
             >
               <div className="lg:col-span-2">
                 <div className="space-y-2">
@@ -257,7 +248,7 @@ const CoursesSection = ({
 
               <div className="lg:col-span-6 space-y-3">
                 <div>
-                  <h3 className="text-lg sm:text-xl font-medium">
+                  <h3 className="text-lg sm:text-xl font-medium  group-hover:text-muted-foreground transition-colors duration-300 group-hover:underline">
                     {course.title}
                   </h3>
                   <div className="flex gap-4 text-sm text-muted-foreground mt-1">
@@ -280,7 +271,7 @@ const CoursesSection = ({
                   </span>
                 ))}
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -461,7 +452,7 @@ export default function CoursesPage() {
     <div className="min-h-screen bg-background text-foreground relative">
       <NavigationDots activeSection={activeSection} sections={sections} />
 
-      <main className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16">
+      <main className="max-w-4xl mx-auto px-6 ">
         <HeaderSection refCallback={(el) => (sectionsRef.current[0] = el)} />
         <CoursesSection refCallback={(el) => (sectionsRef.current[1] = el)} />
         <ContactSection refCallback={(el) => (sectionsRef.current[2] = el)} />

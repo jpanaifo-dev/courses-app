@@ -47,7 +47,7 @@ export interface Session {
 export const sessions: Session[] = [
   {
     id: 1,
-    date: "2025-01-15",
+    date: "2025-11-18",
     duration: "3 horas",
     title: "Fundamentos del Desarrollo Web",
     description: "Introducción a las principales tecnologías y funcionamiento de aplicaciones web modernas.",
@@ -65,7 +65,7 @@ export const sessions: Session[] = [
   },
   {
     id: 2,
-    date: "2025-01-17",
+    date: "2025-11-20",
     duration: "3 horas",
     title: "Python - Fundamentos",
     description: "Lenguaje de programación versátil para desarrollo web, ciencia de datos y machine learning.",
@@ -83,7 +83,7 @@ export const sessions: Session[] = [
   },
   {
     id: 3,
-    date: "2025-01-22",
+    date: "2025-11-25",
     duration: "3 horas",
     title: "Control de Versiones con Git",
     description: "Herramientas esenciales para documentar proyectos y colaborar en equipos.",
@@ -101,7 +101,7 @@ export const sessions: Session[] = [
   },
   {
     id: 4,
-    date: "2025-01-24",
+    date: "2025-11-27",
     duration: "3 horas",
     title: "CSS y Estilos Web",
     description: "Fundamentos de diseño y estilos para interfaces web modernas.",
@@ -119,7 +119,7 @@ export const sessions: Session[] = [
   },
   {
     id: 5,
-    date: "2025-01-29",
+    date: "2025-12-02",
     duration: "3 horas",
     title: "CSS Avanzado y Frameworks",
     description: "Profundización en técnicas avanzadas de CSS y uso de frameworks.",
@@ -137,7 +137,7 @@ export const sessions: Session[] = [
   },
   {
     id: 6,
-    date: "2025-01-31",
+    date: "2025-12-04",
     duration: "3 horas",
     title: "Django - Backend con Python",
     description: "Framework robusto para desarrollo de aplicaciones escalables.",
@@ -155,7 +155,7 @@ export const sessions: Session[] = [
   },
   {
     id: 7,
-    date: "2025-02-05",
+    date: "2025-12-09",
     duration: "3 horas",
     title: "Bases de Datos con MySQL",
     description: "Integración de bases de datos SQL con aplicaciones Django.",
@@ -173,7 +173,7 @@ export const sessions: Session[] = [
   },
   {
     id: 8,
-    date: "2025-02-07",
+    date: "2025-12-11",
     duration: "3 horas",
     title: "JavaScript y React",
     description: "Desarrollo frontend moderno con JavaScript y React.",
